@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/RylanZhou/frontend-mentor-notifications-page)
-- Live Site URL: [Vercel](https://your-live-site-url.com)
+- Live Site URL: [Vercel](https://frontend-mentor-notifications-page-chi.vercel.app/)
 
 ## My process
 
