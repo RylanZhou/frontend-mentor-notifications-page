@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { NotificationData, NotificationType } from './static';
 import styles from './styles.module.scss';
 

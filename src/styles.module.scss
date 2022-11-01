@@ -1,0 +1,23 @@
+$white: hsl(0, 0%, 100%);
+$lighter-gray: hsl(210, 60%, 98%);
+$light-gray-1: hsl(211, 68%, 94%);
+$light-gray-2: hsl(205, 33%, 90%);
+$gray: hsl(219, 14%, 63%);
+$dark-gray: hsl(219, 12%, 42%);
+$dark: hsl(224, 21%, 14%);
+
+.App {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      font-weight: 900;
+    }
+  }
+}

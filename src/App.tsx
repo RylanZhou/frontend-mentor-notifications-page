@@ -9,7 +9,7 @@ function App() {
       <section className={styles.header}>
         <h1>
           Notifications
-          <div className={styles.badge}>{data.filter((each) => !each.hasRead).length}</div>
+          <span className={styles.badge}>{data.filter((each) => !each.hasRead).length}</span>
         </h1>
 
         <button>Mark all as read</button>
