@@ -68,10 +68,10 @@ export default function NotificationItem({ time, data, hasRead, user }: Notifica
   };
 
   return (
-    <div className={`${styles.notification} ${!hasRead ? styles.unread : ''}`}>
+    <li className={`${styles.notification} ${!hasRead ? styles.unread : ''}`}>
       <img className={styles.avatar} src={user.avatar} alt="Avatar" />
 
       <div className={styles.content}>{renderContent()}</div>
-    </div>
+    </li>
   );
 }
