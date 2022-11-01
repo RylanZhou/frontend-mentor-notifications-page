@@ -11,7 +11,6 @@ This is a solution to the [Notifications page challenge on Frontend Mentor](http
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I implemented](#what-i-implemented)
-  - [Useful resources](#useful-resources)
 
 ## Overview
 
@@ -26,9 +25,9 @@ Users should be able to:
 
 ### Screenshot
 
-|               Desktop               |                   Mobile                   |
-| :---------------------------------: | :----------------------------------------: |
-| ![](./assets/images/screenshot.png) | ![](./assets/images/screenshot-mobile.png) |
+|        Desktop        |            Mobile            |
+| :-------------------: | :--------------------------: |
+| ![](./screenshot.png) | ![](./screenshot-mobile.png) |
 
 ### Links
 
