@@ -5,8 +5,10 @@ import styles from './styles.module.scss';
 export default function NotificationItem({ time, data, hasRead, user }: NotificationData) {
   const renderContent = () => (
     <>
-      {renderText()}
-      {hasRead ? <i className={styles.dot}></i> : null}
+      <p>
+        {renderText()}
+        {!hasRead ? <i className={styles.dot}></i> : null}
+      </p>
 
       <div className={styles.time}>{time}</div>
 
@@ -21,43 +23,43 @@ export default function NotificationItem({ time, data, hasRead, user }: Notifica
       case NotificationType.REACT_POST:
         return (
           <>
-            <strong>{user.name}</strong> reacted to your recent post{' '}
-            <span className={styles.post}>{data.postTitle}</span>
-            {hasRead ? <i className={styles.dot}></i> : null}
+            <strong className={styles.name}>{user.name}</strong> reacted to your recent post{' '}
+            <strong className={styles.post}>{data.postTitle}</strong>
           </>
         );
       case NotificationType.NEW_FOLLOW:
         return (
           <>
-            <strong>{user.name}</strong> followed you
+            <strong className={styles.name}>{user.name}</strong> followed you
           </>
         );
       case NotificationType.JOIN_GROUP:
         return (
           <>
-            <strong>{user.name}</strong> has joined your group{' '}
-            <span className={styles.group}>{data.group}</span>
+            <strong className={styles.name}>{user.name}</strong> has joined your group{' '}
+            <strong className={styles.group}>{data.group}</strong>
           </>
         );
       case NotificationType.LEAVE_GROUP:
         return (
           <>
-            <strong>{user.name}</strong> left the group{' '}
-            <span className={styles.group}>{data.group}</span>
+            <strong className={styles.name}>{user.name}</strong> left the group{' '}
+            <strong className={styles.group}>{data.group}</strong>
           </>
         );
       case NotificationType.PICTURE:
         return (
           <>
-            <strong>{user.name}</strong> commented on your picture{' '}
-            <span className={styles.group}>{data.group}</span>
+            <span className={styles.pic}>
+              <strong className={styles.name}>{user.name}</strong> commented on your picture{' '}
+            </span>
             <img src={data.pictureUrl} alt={data.pictureUrl} />
           </>
         );
       case NotificationType.PRIVATE_MESSAGE:
         return (
           <>
-            <strong>{user.name}</strong> sent you a private message{' '}
+            <strong className={styles.name}>{user.name}</strong> sent you a private message{' '}
             <span className={styles.group}>{data.group}</span>
           </>
         );
@@ -66,8 +68,8 @@ export default function NotificationItem({ time, data, hasRead, user }: Notifica
   };
 
   return (
-    <div className={styles.notification}>
-      <img src={user.avatar} alt="Avatar" />
+    <div className={`${styles.notification} ${!hasRead ? styles.unread : ''}`}>
+      <img className={styles.avatar} src={user.avatar} alt="Avatar" />
 
       <div className={styles.content}>{renderContent()}</div>
     </div>

@@ -1,3 +1,5 @@
+$red: hsl(1, 90%, 64%);
+$blue: hsl(219, 85%, 26%);
 $white: hsl(0, 0%, 100%);
 $lighter-gray: hsl(210, 60%, 98%);
 $light-gray-1: hsl(211, 68%, 94%);
@@ -7,17 +9,167 @@ $dark-gray: hsl(219, 12%, 42%);
 $dark: hsl(224, 21%, 14%);
 
 .App {
-  max-width: 1440px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 625px;
+  min-width: 375px;
   width: 100%;
+  height: var(--height);
   margin: 0 auto;
-  padding: 1rem;
+  padding-bottom: 1rem;
+  background-color: $white;
+  overflow-y: auto;
+
+  @media screen and (min-width: 625px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    max-height: 80vh;
+    transform: translate(-50%, -50%);
+  }
 
   .header {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
+    padding: 1.3rem 1rem;
+    background-color: $white;
 
     h1 {
+      font-size: 1.3rem;
       font-weight: 900;
+
+      .badge {
+        display: inline-block;
+        vertical-align: top;
+        padding: 3px 0.7rem;
+        margin-left: 0.7rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        color: $lighter-gray;
+        background-color: $blue;
+      }
+    }
+
+    button {
+      font-size: 0.9rem;
+      color: $dark-gray;
+      background: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  .notifications {
+    flex: 1;
+    padding: 1.3rem 1rem;
+
+    .notification {
+      display: flex;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+
+      &.unread {
+        background-color: $lighter-gray;
+      }
+
+      .avatar {
+        width: 2.6rem;
+        height: 2.6rem;
+        margin-right: 1rem;
+      }
+
+      .content {
+        flex: 1;
+        font-size: 0.9rem;
+        color: $dark-gray;
+
+        p {
+          margin-bottom: 0.3rem;
+
+          .name {
+            margin-right: 0.1rem;
+            color: $dark;
+          }
+
+          .post {
+            color: $dark-gray;
+          }
+
+          .group {
+            margin-left: 0.3rem;
+            color: $dark-gray;
+          }
+
+          strong {
+            transition: color 0.2;
+            cursor: pointer;
+
+            &:hover {
+              color: $blue;
+            }
+          }
+
+          .dot {
+            display: inline-block;
+            width: 0.6rem;
+            aspect-ratio: 1;
+            margin-left: 0.5rem;
+            border-radius: 50%;
+            background-color: $red;
+          }
+
+          .pic {
+            display: inline-block;
+            width: calc(100% - 3.75rem);
+          }
+
+          img {
+            float: right;
+            width: 2.6rem;
+            height: 2.6rem;
+            cursor: pointer;
+          }
+        }
+
+        .time {
+          color: $gray;
+        }
+
+        .message {
+          margin-top: 1rem;
+          padding: 1rem;
+          border: 1px solid $light-gray-1;
+          border-radius: 6px;
+          transition: background-color 0.2s;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $light-gray-1;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    font-size: 0.8rem;
+    text-align: center;
+    color: $gray;
+
+    a {
+      text-decoration: none;
+      color: $red;
     }
   }
 }
